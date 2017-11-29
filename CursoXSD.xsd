@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema
+    targetNamespace="curso"
+    xmlns="curso"
+    xmlns:un="unidade"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+    vc:minVersion="1.0" vc:maxVersion="1.1"> 
+    <!-- 
+         XSD que caracteriza o curso defenido por
+      unidades curriculares e respetivos exames;
+    -->
+    
+    <xs:import schemaLocation="UnidadeXSD.xsd" namespace="unidade"/>
+    
+    <!-- Curso -->
+    <xs:complexType name="curso">
+        <xs:sequence>
+            <xs:element name="nome" type="xs:string"/>
+            <xs:element name="coordenador" type="xs:string"/>
+            <xs:element name="unidades" type="unidades" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="nivel" type="niveis" use="required"/>
+        <xs:attribute name="codigo" type="codigoCurso" use="required"/>
+        <xs:attribute name="ano" type="anoLetivo" use="required"/>
+    </xs:complexType>
+    
+    <!-- Atributos do curso -->
+    <!-- Níveis -->
+    <xs:simpleType name="niveis">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Licenciatura"/>
+            <xs:enumeration value="Mestrado"/>
+            <xs:enumeration value="CTeSP"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Codigo de curso -->
+    <xs:simpleType name="codigoCurso">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:totalDigits value="4"/>
+        </xs:restriction>
+    </xs:simpleType> 
+    
+    <!-- Ano Letivo -->
+    <xs:simpleType name="anoLetivo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{4}(/[0-9]{4})"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Unidades curriculares -->
+    <xs:complexType name="unidades">
+        <xs:sequence>
+            <!-- Defenido em UnidadeXSD.xsd --> 
+            <xs:element name="unidade" type="un:unidadesCurso" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+</xs:schema>
+

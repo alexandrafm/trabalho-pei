@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema
+    targetNamespace="unidade"
+    xmlns="unidade"
+    xmlns:ex="exame"
+    xmlns:cl="calendario"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+    vc:minVersion="1.0" vc:maxVersion="1.1"> 
+
+    <xs:import schemaLocation="ExameXSD.xsd" namespace="exame"/>
+    <xs:import schemaLocation="CalendarioXSD.xsd" namespace="calendario"/>
+
+    <!-- Cada unidade curricular -->
+    <xs:complexType name="unidadesCurso">
+        <xs:sequence>
+            <xs:element name="nomeUC" type="xs:string"/>
+            <xs:element name="regente" type="xs:string"/>
+            <xs:element name="anoCurricular" type="anoTipos"/>
+            <xs:element name="docentes" type="docentes"/>
+            <xs:element name="exames" type="examesCurso" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="codigo" type="codigoUnidade" use="required"/>
+        <!-- <<semestreTipo>> defenido em CalendarioXSD.xsd -->
+        <xs:attribute name="semestre" type="cl:semestreTipo" use="required"/>
+        <xs:attribute name="area" type="areaCientifica" use="required"/>
+    </xs:complexType>
+    
+    <!-- Atributos da unidade curricular -->
+    <!-- Codigo da unidade curricular -->
+    <xs:simpleType name="codigoUnidade">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="4"/>
+        </xs:restriction>
+    </xs:simpleType>    
+    <!-- Area Cientifica -->
+    <xs:simpleType name="areaCientifica">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Informática"/>
+            <xs:enumeration value="Matemática"/>
+            <xs:enumeration value="Ciências"/>
+            <xs:enumeration value="Física/Eletricidade"/>
+            <xs:enumeration value="Direito"/>
+            <xs:enumeration value="Contabilidade"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Ano da unidade curricular -->
+    <xs:simpleType name="anoTipos">
+        <xs:restriction base="xs:integer">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Docentes -->
+    <xs:complexType name="docentes">
+        <xs:sequence>
+            <xs:element name="nome" type="nomeDocentes" minOccurs="1" maxOccurs="4"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- Nomes dos docentes -->
+    <xs:complexType name="nomeDocentes">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="tipologia" type="tipologias" use="required"/>
+                <xs:attribute name="codigo" type="codigoDocente" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <!-- Atributos dos docentes -->
+    <!-- Codigo do docente -->
+    <xs:simpleType name="codigoDocente">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="15"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Tipologias: também atribuído em ExameXSD.xsd -->
+    <xs:simpleType name="tipologias">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="T"/>
+            <xs:enumeration value="TP"/>
+            <xs:enumeration value="PL"/>
+            <xs:enumeration value="OT"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Exames -->
+    <xs:complexType name="examesCurso">
+        <xs:sequence>
+            <!-- Defenido em ExameXSD.xsd -->
+            <xs:element name="exame" type="ex:exameDisciplina" maxOccurs="6"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

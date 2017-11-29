@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema 
+    targetNamespace="calendario"
+    xmlns="calendario"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+    vc:minVersion="1.0" vc:maxVersion="1.1"> 
+    <!-- 
+         XSD que caracteriza o calendário escolar defenido
+      pelos semestres e e épocas de avaliação;    
+    -->
+
+    <!-- Calendario -->
+    <xs:complexType name="calendarioTipo">
+        <xs:sequence>
+            <xs:element name="epoca" type="epocaTipo" maxOccurs="5"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- Semestre -->
+    <xs:complexType name="epocaTipo">
+        <xs:sequence>
+            <xs:element name="regime" type="epocaAvaliacao"/>
+            <xs:element name="numSemestre" type="semestreTipo"/>
+            <xs:element name="dataInicio" type="xs:date"/>
+            <xs:element name="dataFim" type="xs:date"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- Epoca de avalaliação: também atribuído em ExameXSD.xsd -->
+    <xs:simpleType name="epocaAvaliacao">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Normal"/>
+            <xs:enumeration value="Recurso"/>
+            <xs:enumeration value="Especial"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Tipo de semestre: também atribuído em UnidadeXSD.xsd -->
+    <xs:simpleType name="semestreTipo">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="Semestral"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

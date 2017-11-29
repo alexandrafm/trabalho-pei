@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema 
+    targetNamespace="exame"
+    xmlns="exame"
+    xmlns:un="unidade"
+    xmlns:cl="calendario"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+    vc:minVersion="1.0" vc:maxVersion="1.1"> 
+    <!-- 
+         XSD que caracteriza os exames;
+    -->
+
+    <xs:import schemaLocation="CalendarioXSD.xsd" namespace="calendario"/>
+    <xs:import schemaLocation="UnidadeXSD.xsd" namespace="unidade"/>
+
+    <!-- Exame -->
+    <xs:complexType name="exameDisciplina">
+        <xs:sequence>
+            <!-- <<epocaAvaliacao>> defenido em CalendarioXSD.xsd -->
+            <xs:element name="epoca" type="cl:epocaAvaliacao"/>
+            <xs:element name="data" type="xs:date"/>
+            <xs:element name="hora" type="xs:time"/>
+            <xs:element name="duracao" type="xs:duration"/>
+            <xs:element name="sala" type="tipoSala"/>
+            <xs:element name="responsavel" type="xs:string"/>
+            <!-- <<tipologias>> defenido em UnidadeXSD.xsd -->
+            <xs:element name="tipologia" type="un:tipologias"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- Tipos de sala -->
+    <xs:simpleType name="tipoSala">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Informatica"/>
+            <xs:enumeration value="Normal"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

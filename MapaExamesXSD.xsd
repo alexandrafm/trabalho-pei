@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:cr="curso"
+    xmlns:cl="calendario"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+    vc:minVersion="1.0" vc:maxVersion="1.1"> 
+
+    <xs:import schemaLocation="CursoXSD.xsd" namespace="curso"/>
+    <xs:import schemaLocation="CalendarioXSD.xsd" namespace="calendario"/>
+    
+    <!-- XSD PRINCIPAL -->
+    <!-- Mapa de exames defenido por um calendario e cursos -->
+    <xs:element name="mapaExames">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Defenido em CalendarioXSD.xsd -->
+                <xs:element name="calendario" type="cl:calendarioTipo" maxOccurs="1"/>
+                <!-- Defenido em CursoXSD.xsd -->
+                <xs:element name="curso" type="cr:curso" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element> 
+
+</xs:schema>
+    

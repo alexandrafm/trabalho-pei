@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="tentativa.xsl"?>
+
+<mapaExames xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="MapaExamesXSD.xsd">
+    
+    
+    <calendario>
+        <epoca>
+            <regime>Normal</regime>
+            <numSemestre>1</numSemestre>
+            <dataInicio>2018-01-15</dataInicio>
+            <dataFim>2018-02-03</dataFim>
+        </epoca>
+        <epoca>
+            <regime>Recurso</regime>
+            <numSemestre>1</numSemestre>
+            <dataInicio>2018-02-05</dataInicio>
+            <dataFim>2018-02-24</dataFim>
+        </epoca>
+        <epoca>
+            <regime>Normal</regime>
+            <numSemestre>2</numSemestre>
+            <dataInicio>2018-05-15</dataInicio>
+            <dataFim>2018-06-03</dataFim>
+        </epoca>
+        <epoca>
+            <regime>Recurso</regime>
+            <numSemestre>2</numSemestre>
+            <dataInicio>2018-06-15</dataInicio>
+            <dataFim>2018-07-03</dataFim>
+        </epoca> 
+        <epoca>
+            <regime>Especial</regime>
+            <numSemestre>Semestral</numSemestre>
+            <dataInicio>2018-09-05</dataInicio>
+            <dataFim>2018-09-29</dataFim>
+        </epoca>        
+    </calendario>  
+        
+    <curso nivel="Licenciatura" codigo="2501" ano="2017/2018">
+        <nome>Engenharia Informática</nome>
+        <coordenador>Ricardo Santos</coordenador>
+
+        <unidades>
+            <unidade codigo="PEI" semestre="1" area="Informática">
+                <nomeUC>Processamento Estruturado de Informacao</nomeUC>
+                <regente>Bruno Oliveira</regente>
+                <anoCurricular>2</anoCurricular>
+                <docentes>
+                    <nome tipologia="TP" codigo="bmo">Bruno Oliveira</nome>
+                    <nome tipologia="PL" codigo="oao">Óscar Oliveira</nome>
+                    <nome tipologia="PL" codigo="mfsr">Manuel Rodrigues</nome>
+                </docentes>
+                <exames>
+                    <exame>
+                        <epoca>Normal</epoca>
+                        <data>2018-01-23</data>
+                        <hora>10:00:00</hora>
+                        <duracao>PT2H</duracao>
+                        <sala>Informatica</sala>
+                        <responsavel>Bruno Oliveira</responsavel>
+                        <tipologia>TP</tipologia>
+                    </exame>
+                    <exame>
+                        <epoca>Normal</epoca>
+                        <data>2018-01-23</data>
+                        <hora>14:00:00</hora>
+                        <duracao>PT2H</duracao>
+                        <sala>Informatica</sala>
+                        <responsavel>Bruno Oliveira</responsavel>
+                        <tipologia>PL</tipologia>
+                    </exame>
+                    <exame>
+                        <epoca>Recurso</epoca>
+                        <data>2017-02-11</data>
+                        <hora>10:00:00</hora>
+                        <duracao>PT2H</duracao>
+                        <sala>Informatica</sala>
+                        <responsavel>Bruno Oliveira</responsavel>
+                        <tipologia>TP</tipologia>
+                    </exame>
+                    <exame>
+                        <epoca>Recurso</epoca>
+                        <data>2017-02-11</data>
+                        <hora>14:00:00</hora>
+                        <duracao>PT2H</duracao>
+                        <sala>Informatica</sala>
+                        <responsavel>Bruno Oliveira</responsavel>
+                        <tipologia>PL</tipologia>
+                    </exame>
+                    <exame>
+                        <epoca>Especial</epoca>
+                        <data>2017-09-07</data>
+                        <hora>10:00:00</hora>
+                        <duracao>PT2H</duracao>
+                        <sala>Informatica</sala>
+                        <responsavel>Bruno Oliveira</responsavel>
+                        <tipologia>TP</tipologia>
+                    </exame>
+                    <exame>
+                        <epoca>Especial</epoca>
+                        <data>2017-09-07</data>
+                        <hora>14:00:00</hora>
+                        <duracao>PT2H</duracao>
+                        <sala>Informatica</sala>
+                        <responsavel>Bruno Oliveira</responsavel>
+                        <tipologia>PL</tipologia>
+                    </exame>
+                </exames>
+            </unidade>
+    
+            <unidade codigo="SO" semestre="1" area="Informática" >
+                <nomeUC>Sistemas Operativos</nomeUC>
+                <regente>António Pinto</regente>
+                <anoCurricular>2</anoCurricular>
+                <docentes>
+                    <nome tipologia="T" codigo="aap">António Pinto</nome>
+                    <nome tipologia="PL" codigo="ams">Altino Sampaio</nome>
+                </docentes>
+                <exames>
+                    <exame>
+                        <epoca>Normal</epoca>
+                        <data>2018-01-24</data>
+                        <hora>15:30:00</hora>
+                        <duracao>PT2H</duracao>
+                        <sala>Normal</sala>
+                        <responsavel>António Pinto</responsavel>
+                        <tipologia>PL</tipologia>
+                    </exame>
+                    <exame>
+                        <epoca>Recurso</epoca>
+                        <data>2018-02-23</data>
+                        <hora>16:00:00</hora>
+                        <duracao>PT2H</duracao>
+                        <sala>Normal</sala>
+                        <responsavel>António Pinto</responsavel>
+                        <tipologia>PL</tipologia>
+                    </exame>
+                    <exame>
+                        <epoca>Especial</epoca>
+                        <data>2018-09-20</data>
+                        <hora>16:00:00</hora>
+                        <duracao>PT2H</duracao>
+                        <sala>Normal</sala>
+                        <responsavel>António Pinto</responsavel>
+                        <tipologia>PL</tipologia>
+                    </exame>
+                </exames>
+            </unidade>
+                
+            <unidade codigo ="MCII" semestre="1" area="Matemática" >
+                <nomeUC>Matemática Computacional II</nomeUC>
+                <regente>Aldina Correia</regente>
+                <anoCurricular>2</anoCurricular>
+                <docentes>
+                    <nome tipologia="TP" codigo="aic">Aldina Correia</nome>
+                    <nome tipologia="PL" codigo="eos">Eliana Silva</nome>
+                </docentes>
+                <exames>
+                    <exame>
+                        <epoca>Normal</epoca>
+                        <data>2018-01-25</data>
+                        <hora>10:00:00</hora>
+                        <duracao>PT2H</duracao>
+                        <sala>Informatica</sala>
+                        <responsavel>Aldina Correia</responsavel>
+                        <tipologia>PL</tipologia>
+                    </exame>
+                    <exame>
+                        <epoca>Recurso</epoca>
+                        <data>2018-02-26</data>
+                        <hora>10:00:00</hora>
+                        <duracao>PT2H</duracao>
+                        <sala>Informatica</sala>
+                        <responsavel>Aldina Correia</responsavel>
+                        <tipologia>PL</tipologia>
+                    </exame>
+                    <exame>
+                        <epoca>Especial</epoca>
+                        <data>2018-09-25</data>
+                        <hora>10:00:00</hora>
+                        <duracao>PT2H</duracao>
+                        <sala>Informatica</sala>
+                        <responsavel>Aldina Correia</responsavel>
+                        <tipologia>PL</tipologia>
+                    </exame>
+                </exames>
+            </unidade>
+                
+            <unidade codigo ="FP" semestre="1" area="Informática" >
+                <nomeUC>Fundamentos da Programação</nomeUC>
+                <regente>Vasco Santos</regente>
+                <anoCurricular>1</anoCurricular>
+                <docentes>
+                    <nome tipologia="PL" codigo="vns">Vasco Santos</nome>
+                    <nome tipologia="PL" codigo="cmp">Carlos Pereira</nome>
+                </docentes>
+                <exames>
+                    <exame>
+                        <epoca>Normal</epoca>
+                        <data>2018-01-25</data>
+                        <hora>10:00:00</hora>
+                        <duracao>PT2H</duracao>
+                        <sala>Informatica</sala>
+                        <responsavel>Vasco Santos</responsavel>
+                        <tipologia>PL</tipologia>
+                    </exame>
+                </exames>
+            </unidade>
+                
+            <unidade codigo ="LP" semestre="1" area="Informática" >
+                <nomeUC>Laboratorio de Programação</nomeUC>
+                <regente>Davide Carneiro</regente>
+                <anoCurricular>1</anoCurricular>
+                <docentes>
+                    <nome tipologia="PL" codigo="dcarneiro">Davide Carneiro</nome>
+                    <nome tipologia="PL" codigo="dad">Dalila Durães</nome>
+                    <nome tipologia="PL" codigo="mfsr">Manuel Rodrigues</nome>
+                    <nome tipologia="PL" codigo="mfg">Marco Gomes</nome>
+                </docentes>
+                <exames>
+                    <exame>
+                        <epoca>Normal</epoca>
+                        <data>2018-01-23</data>
+                        <hora>10:00:00</hora>
+                        <duracao>PT2H</duracao>
+                        <sala>Informatica</sala>
+                        <responsavel>Davide Carneiro</responsavel>
+                        <tipologia>PL</tipologia>
+                    </exame>
+                    <exame>
+                        <epoca>Recurso</epoca>
+                        <data>2018-02-20</data>
+                        <hora>10:00:00</hora>
+                        <duracao>PT2H</duracao>
+                        <sala>Informatica</sala>
+                        <responsavel>Davide Carneiro</responsavel>
+                        <tipologia>PL</tipologia>
+                    </exame>
+                    <exame>
+                        <epoca>Especial</epoca>
+                        <data>2018-09-27</data>
+                        <hora>10:00:00</hora>
+                        <duracao>PT2H</duracao>
+                        <sala>Informatica</sala>
+                        <responsavel>Davide Carneiro</responsavel>
+                        <tipologia>PL</tipologia>
+                    </exame>
+                </exames>
+            </unidade>
+            
+            <unidade codigo ="FA" semestre="1" area="Física/Eletricidade" >
+                <nomeUC>Física Aplicada</nomeUC>
+                <regente>Maria Ferreira</regente>
+                <anoCurricular>1</anoCurricular>
+                <docentes>
+                    <nome tipologia="PL" codigo="mff">Maria Ferreira</nome>
+                </docentes>
+                <exames>
+                    <exame>
+                        <epoca>Normal</epoca>
+                        <data>2018-01-30</data>
+                        <hora>10:00:00</hora>
+                        <duracao>PT2H</duracao>
+                        <sala>Normal</sala>
+                        <responsavel>Maria Ferreira</responsavel>
+                        <tipologia>PL</tipologia>
+                    </exame>
+                </exames>
+            </unidade>
+            
+            <unidade codigo ="ALGA" semestre="1" area="Matemática" >
+                <nomeUC>Algebra Linear e Geometria Analitica</nomeUC>
+                <regente>Teófilo Melo</regente>
+                <anoCurricular>1</anoCurricular>
+                <docentes>
+                    <nome tipologia="TP" codigo="tmm">Teófilo Mel</nome>
+                    <nome tipologia="PL" codigo="mff">Maria João Polidoro</nome>
+                </docentes>
+                <exames>
+                    <exame>
+                        <epoca>Normal</epoca>
+                        <data>2018-01-29</data>
+                        <hora>10:00:00</hora>
+                        <duracao>PT2H</duracao>
+                        <sala>Normal</sala>
+                        <responsavel>Teófilo Melo</responsavel>
+                        <tipologia>PL</tipologia>
+                    </exame>
+                </exames>
+            </unidade>
+                
+        </unidades>
+        
+    </curso>
+    
+</mapaExames>
